@@ -4,8 +4,6 @@ A modern, animated Hangman game built with React and Vite. Four game modes,
 six categories, four difficulty levels, synth sound effects, confetti
 celebrations, persistent stats, and a packaged Android build via Capacitor.
 
-![icon](store-assets/icon-512.png)
-
 ## Features
 
 - **Four game modes**
@@ -81,17 +79,9 @@ npm run assets
 # builds the web app and copies it into the Android project
 npm run android:sync
 
-# builds, syncs, then opens Android Studio for signing & .aab generation
+# builds, syncs, then opens Android Studio
 npm run android:open
 ```
-
-In Android Studio: **Build → Generate Signed Bundle / APK → Android App
-Bundle**. Create a keystore once, **back it up**, then upload the resulting
-`app-release.aab` to Play Console.
-
-Play Store assets and a publishing checklist are generated under
-[`store-assets/`](./store-assets/), including a draft privacy policy and the
-listing copy.
 
 ## Controls
 
