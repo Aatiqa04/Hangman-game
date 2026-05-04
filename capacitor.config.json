@@ -1,0 +1,12 @@
+{
+  "appId": "com.yourname.hangman",
+  "appName": "Hangman",
+  "webDir": "dist",
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
