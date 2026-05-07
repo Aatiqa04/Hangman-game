@@ -40,6 +40,9 @@ export default function GameScreen({ game }) {
 
       <main className="game__board">
         <section className="game__stage">
+          <span className="game__wrong-badge">
+            Wrong: <strong>{state.wrong}</strong>/{state.maxWrong}
+          </span>
           <HangmanDrawing
             wrong={state.wrong}
             maxWrong={state.maxWrong}
@@ -48,6 +51,16 @@ export default function GameScreen({ game }) {
         </section>
 
         <section className="game__center">
+          {state.wordCategory && (
+            <div className="game__category-badge">
+              📢 {state.wordCategory.toUpperCase()}
+            </div>
+          )}
+
+          <div className="game__score-badge">
+            SCORE <strong>{Math.round(state.score)}</strong>
+          </div>
+
           {state.hintRevealed && (
             <div className="hint-banner">
               <span className="hint-banner__icon">💡</span>
@@ -61,15 +74,6 @@ export default function GameScreen({ game }) {
             reveal={state.status === 'lost' || state.status === 'roundLost'}
             lastGuess={state.lastGuess}
           />
-
-          {wrongLetters.length > 0 && (
-            <div className="wrong-list" aria-label="Wrong guesses">
-              <span className="wrong-list__label">Wrong:</span>
-              {wrongLetters.map((l) => (
-                <span key={l} className="wrong-list__letter">{l.toUpperCase()}</span>
-              ))}
-            </div>
-          )}
 
           <Keyboard
             alphabet={alphabet}

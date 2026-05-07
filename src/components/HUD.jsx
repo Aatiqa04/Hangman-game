@@ -20,10 +20,11 @@ export default function HUD({ state, onHint, onMenu }) {
 
   return (
     <header className="hud">
-      <div className="hud__left">
-        <button className="btn btn--ghost" onClick={onMenu} aria-label="Back to menu">
-          ← Menu
-        </button>
+      <button className="btn btn--ghost" onClick={onMenu} aria-label="Back to menu">
+        ← Menu
+      </button>
+
+      <div className="hud__chips">
         <div className="hud__chip">
           <span className="hud__chip-label">Mode</span>
           <span className="hud__chip-value">{MODE_LABEL[state.mode]}</span>
@@ -51,10 +52,6 @@ export default function HUD({ state, onHint, onMenu }) {
             <span className="hud__timer-value">{state.timeLeft}s</span>
           </div>
         )}
-        <div className="hud__score">
-          <span className="hud__score-label">Score</span>
-          <span className="hud__score-value">{Math.round(state.score)}</span>
-        </div>
         {state.streak > 0 && (
           <div className="hud__streak">🔥 {state.streak}</div>
         )}
